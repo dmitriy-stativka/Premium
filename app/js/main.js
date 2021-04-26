@@ -146,3 +146,27 @@ const swiperAdvantages = new Swiper('.advantages__slider-container', {
 
   
 });
+
+
+
+const menuButton = document.querySelector('.header__menu-btn');
+const sideMenu = document.querySelector('.header__sidemenu');
+const menuCloseButton = document.querySelector('.header__sidemenu-btn-close');
+const sideMenuLink = document.querySelectorAll('.header__sidemenu-link');
+const sideMenuBody = document.querySelector('.header__sidemenu');
+
+
+menuButton.addEventListener('click', (e) => {
+  sideMenu.classList.toggle('header__sidemenu--active');
+  menuButton.classList.toggle('header__menu-btn--close');
+     
+});
+
+
+sideMenuLink.forEach((el) => {
+  el.addEventListener('click', (e) => {
+    sideMenu.classList.remove('header__sidemenu--active');
+    menuButton.classList.remove('header__menu-btn--close');
+  });
+});
+
